@@ -1,0 +1,29 @@
+<navbar></navbar>
+
+<div class="container m-auto mt-4 flex flex-col">
+  <div class="grid grid-cols-4 gap-3">
+    <div
+      *ngFor="let pokemon of pokemons"
+      [routerLink]="['/pokemon', pokemon.name]"
+      [state]="pokemon"
+      class="flex gap-3 bg-red-500 text-zinc-50 text-2xl rounded shadow-md items-end overflow-hidden cursor-pointer hover:bg-red-600 transition-colors group"
+    >
+      <img
+        [src]="pokemon.sprites.other['official-artwork'].front_default"
+        [alt]="pokemon.name"
+        class="w-1/4 bg-gradient-to-br from-zinc-700 to-zinc-950"
+      />
+      <h4
+        class="capitalize font-medium pb-2 group-hover:text-3xl transition-all duration-200 ease-in-out"
+      >
+        {{ pokemon.name }}
+      </h4>
+    </div>
+  </div>
+  <button
+    (click)="loadPokemons()"
+    class="px-10 py-2 bg-zinc-950 text-zinc-50 my-3 text-xl rounded hover:bg-zinc-900 transition-colors ease-in-out self-center"
+  >
+    Carregar Mais
+  </button>
+</div>

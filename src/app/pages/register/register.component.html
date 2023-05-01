@@ -1,0 +1,41 @@
+<form
+  class="p-3 border rounded-md shadow-md w-3/12 m-auto mt-4 flex flex-col gap-4"
+  (ngSubmit)="register()"
+>
+  <div class="flex flex-col gap-1">
+    <label for="username">Usuário</label>
+    <input
+      class="px-3 py-2 border rounded bg-zinc-50"
+      type="text"
+      id="username"
+      name="username"
+      [(ngModel)]="username"
+    />
+  </div>
+  <div class="flex flex-col gap-1">
+    <label for="password">Senha</label>
+    <input
+      class="px-3 py-2 border rounded bg-zinc-50"
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="password"
+    />
+  </div>
+  <div class="flex flex-col gap-1">
+    <label for="confirm">Confirmar senha</label>
+    <input
+      class="px-3 py-2 border rounded bg-zinc-50"
+      type="password"
+      id="confirm"
+      name="confirm"
+      [(ngModel)]="confirm"
+    />
+  </div>
+  <button
+    class="bg-red-500 px-3 py-3 w-full rounded text-zinc-100"
+    type="submit"
+  >
+    Cadastrar
+  </button>
+</form>
